@@ -1,2 +1,2 @@
 # bearzfirex.github.io
-Portfolio
+A Portfolio page made as presentation and contact page.
