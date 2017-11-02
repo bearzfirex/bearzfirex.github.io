@@ -176,12 +176,13 @@ body > .navbar > .menu > .nav-mobile > .hamburger.is-active .line:nth-child(3) {
 }
 
 body > #content {
-  display: none;
+  opacity: 0;
   position: relative;
 }
 
 body > #content > #welcome {
   position: relative;
+  width: 100%;
   min-height: 480px;
   background-image: url("../images/website-design-background.jpg");
   background-repeat: no-repeat;
@@ -193,7 +194,6 @@ body > #content > #welcome > .presentation {
   position: absolute;
   width: 320px;
   height: 320px;
-  transition: top, left 1s;
 }
 
 body > #content > #welcome > .presentation > .logo {

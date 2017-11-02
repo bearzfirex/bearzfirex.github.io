@@ -33,16 +33,22 @@
 })(jQuery);
 
 function centerAll() {
-  $('.center').center();
+  $('.center').center({transition: 300});
   $('.center-vertically').center({
+    transition: 300,
     horizontal: false
   });
   $('.center-horizontally').center({
+    transition: 300,
     vertical: false
   });
 }
 
 centerAll();
+
+$('.loading').center({
+  inside: window
+});
 
 $(window).bind('resize', function() {
     centerAll();
@@ -60,7 +66,12 @@ $(window).bind('resize', function() {
     }
 });
 
-$(document).ready(function(){
+$('.full-window').css({
+  width: "100%",
+  height: $(window).height()
+});
+
+$(window).on('load', function(){
 
   centerAll();
 
@@ -78,7 +89,7 @@ $(document).ready(function(){
     height: $(window).height()
   });
 
-  $('#content').fadeIn(500, function(){
+  $('#content').animate({opacity: "1"}, 500, function(){
     centerAll();
     $('body').toggleClass('start animated');
     setTimeout(function(){
