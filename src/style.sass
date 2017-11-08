@@ -45,6 +45,7 @@ $thickness:  8px; // Odd numbers created a "wobble" effect.
 //Default values for elements
 
 body
+  overflow: hidden
   > .loading
     display: none
   > .navbar
@@ -62,6 +63,7 @@ body
     font-family: sans-serif
     > .menu
       width: 90%
+      padding: 0 5%
       > .brand
         padding: 15px
         position: relative
@@ -96,6 +98,7 @@ body
           top: 0
         > .elements-container
           width: 100%
+          height: 141px 
           text-align: center
           > a
             text-decoration: none
@@ -146,14 +149,19 @@ body
   > #content
     opacity: 0
     position: relative
-    > #welcome
+    > .container
       position: relative
       width: 100%
+      overflow: hidden
+      > .row 
+        width: 100%
+        position: relative
+        text-align: center
+    > #welcome
       min-height: 480px
       background-image: url("../images/website-design-background.jpg")
       background-repeat: no-repeat
       background-size: 100% 100%
-      overflow: hidden
       > .presentation
         position: absolute
         width: 320px
@@ -185,6 +193,21 @@ body
           > h3
             font-size: 25px
             margin-top: 10px
+    > #portfolio
+      display: none
+      width: 100%
+      height: auto
+      .portfolio-item
+        width: 90%
+        margin: 15px 5%
+        background-color: green
+        height: 260px
+        float: left
+    > #presentation
+      display: none
+      background-color: red
+      width: 100%
+      height: 300px
 
 //Rules before the page is loaded
 
@@ -204,7 +227,7 @@ body.start
         > .text
           top: 200%
 
-//Rules while page is animating
+//Rules after the page is loaded
 
 body.animated
   > .navbar
@@ -212,6 +235,7 @@ body.animated
     top: 0
     width: 100%
     background-color: #000
+    border-bottom: 1px solid #fff
   > #content
     > .loading
       display: none
@@ -222,16 +246,20 @@ body.animated
         > .text
           top: 0
 
-//Rules for last animations
+//Rules for to end animations
 
 body.done
+  overflow: auto
   > .navbar
-    padding: 20px 0
-    background-color: transparent
+    padding: 0
+    background-color: #000
+    border-bottom: 1px solid #fff
 
 @media screen and (min-width: 800px)
   body
     > .navbar
+      padding: 20px 0
+      background-color: transparent
       > .menu
         > .elements
           position: relative
@@ -251,3 +279,28 @@ body.done
               width: auto
         > .nav-mobile
           display: none
+    > #content
+      > .container
+        position: relative
+        width: 100%
+        overflow: hidden
+        > .row 
+          width: 90%
+          padding: 0 5%
+          position: relative
+          text-align: center
+      > #portfolio
+        width: 100%
+        height: auto
+        .portfolio-item
+          width: 30.33333333333333%
+          margin: 15px 1.5% 15px 1.5%
+          background-color: green
+          height: 150px
+          float: left    
+
+  body.done
+    > .navbar
+      padding: 20px 0
+      background-color: transparent
+      border-bottom: transparent

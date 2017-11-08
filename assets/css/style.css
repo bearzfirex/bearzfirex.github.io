@@ -1,46 +1,50 @@
 @-webkit-keyframes rotate-forever {
   0% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
-  }
-}
-
-@-moz-keyframes rotate-forever {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 @keyframes rotate-forever {
   0% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 .loading {
-  animation-duration: 0.75s;
-  animation-iteration-count: infinite;
-  animation-name: rotate-forever;
-  animation-timing-function: linear;
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: rotate-forever;
+          animation-name: rotate-forever;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
   width: 30px;
   height: 30px;
   border: 8px solid blue;
   border-right-color: transparent;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
   display: inline-block;
 }
 
 * {
   padding: 0;
   margin: 0;
+}
+
+body {
+  overflow: hidden;
 }
 
 body > .loading {
@@ -58,12 +62,15 @@ body > .navbar {
   background-color: transparent;
   height: 50px;
   overflow: hidden;
+  -webkit-transition: all 1.8s;
+  -o-transition: all 1.8s;
   transition: all 1.8s;
   font-family: sans-serif;
 }
 
 body > .navbar > .menu {
   width: 90%;
+  padding: 0 5%;
 }
 
 body > .navbar > .menu > .brand {
@@ -101,6 +108,8 @@ body > .navbar > .menu > .elements {
   height: 100%;
   background-color: #000;
   background-color: rgba(0, 0, 0, 0.8);
+  -webkit-transition: top 0.4s;
+  -o-transition: top 0.4s;
   transition: top 0.4s;
 }
 
@@ -110,6 +119,7 @@ body > .navbar > .menu > .elements.show {
 
 body > .navbar > .menu > .elements > .elements-container {
   width: 100%;
+  height: 141px;
   text-align: center;
 }
 
@@ -121,6 +131,8 @@ body > .navbar > .menu > .elements > .elements-container > a {
   width: 100%;
   font-size: 14px;
   padding: 15px;
+  -webkit-transition: all 0.8s;
+  -o-transition: all 0.8s;
   transition: all 0.8s;
 }
 
@@ -164,14 +176,12 @@ body > .navbar > .menu > .nav-mobile > .hamburger.is-active .line:nth-child(2) {
 body > .navbar > .menu > .nav-mobile > .hamburger.is-active .line:nth-child(1) {
   -webkit-transform: translateY(6px) rotate(45deg);
   -ms-transform: translateY(6px) rotate(45deg);
-  -o-transform: translateY(6px) rotate(45deg);
   transform: translateY(6px) rotate(45deg);
 }
 
 body > .navbar > .menu > .nav-mobile > .hamburger.is-active .line:nth-child(3) {
   -webkit-transform: translateY(-6px) rotate(-45deg);
   -ms-transform: translateY(-6px) rotate(-45deg);
-  -o-transform: translateY(-6px) rotate(-45deg);
   transform: translateY(-6px) rotate(-45deg);
 }
 
@@ -180,14 +190,24 @@ body > #content {
   position: relative;
 }
 
-body > #content > #welcome {
+body > #content > .container {
   position: relative;
   width: 100%;
+  overflow: hidden;
+}
+
+body > #content > .container > .row {
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+body > #content > #welcome {
   min-height: 480px;
   background-image: url("../images/website-design-background.jpg");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  overflow: hidden;
+  -webkit-background-size: 100% 100%;
+          background-size: 100% 100%;
 }
 
 body > #content > #welcome > .presentation {
@@ -202,6 +222,8 @@ body > #content > #welcome > .presentation > .logo {
   width: 200px;
   height: 200px;
   opacity: 1;
+  -webkit-transition: opacity 1s;
+  -o-transition: opacity 1s;
   transition: opacity 1s;
 }
 
@@ -221,6 +243,8 @@ body > #content > #welcome > .presentation > .text {
   margin-top: 20px;
   position: relative;
   top: 0;
+  -webkit-transition: top 1.4s;
+  -o-transition: top 1.4s;
   transition: top 1.4s;
 }
 
@@ -231,6 +255,27 @@ body > #content > #welcome > .presentation > .text > h1 {
 body > #content > #welcome > .presentation > .text > h3 {
   font-size: 25px;
   margin-top: 10px;
+}
+
+body > #content > #portfolio {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+
+body > #content > #portfolio .portfolio-item {
+  width: 90%;
+  margin: 15px 5%;
+  background-color: green;
+  height: 260px;
+  float: left;
+}
+
+body > #content > #presentation {
+  display: none;
+  background-color: red;
+  width: 100%;
+  height: 300px;
 }
 
 body.start > .loading {
@@ -257,6 +302,7 @@ body.animated > .navbar {
   top: 0;
   width: 100%;
   background-color: #000;
+  border-bottom: 1px solid #fff;
 }
 
 body.animated > #content > .loading {
@@ -271,12 +317,21 @@ body.animated > #content > #welcome > .presentation > .text {
   top: 0;
 }
 
+body.done {
+  overflow: auto;
+}
+
 body.done > .navbar {
-  padding: 20px 0;
-  background-color: transparent;
+  padding: 0;
+  background-color: #000;
+  border-bottom: 1px solid #fff;
 }
 
 @media screen and (min-width: 800px) {
+  body > .navbar {
+    padding: 20px 0;
+    background-color: transparent;
+  }
   body > .navbar > .menu > .elements {
     position: relative;
     top: 0;
@@ -298,6 +353,33 @@ body.done > .navbar {
   }
   body > .navbar > .menu > .nav-mobile {
     display: none;
+  }
+  body > #content > .container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  body > #content > .container > .row {
+    width: 90%;
+    padding: 0 5%;
+    position: relative;
+    text-align: center;
+  }
+  body > #content > #portfolio {
+    width: 100%;
+    height: auto;
+  }
+  body > #content > #portfolio .portfolio-item {
+    width: 30.33333333333333%;
+    margin: 15px 1.5% 15px 1.5%;
+    background-color: green;
+    height: 150px;
+    float: left;
+  }
+  body.done > .navbar {
+    padding: 20px 0;
+    background-color: transparent;
+    border-bottom: transparent;
   }
 }
  
