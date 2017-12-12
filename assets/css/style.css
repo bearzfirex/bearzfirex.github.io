@@ -33,14 +33,16 @@
   height: 30px;
   border: 8px solid blue;
   border-right-color: transparent;
-  -webkit-border-radius: 50%;
-          border-radius: 50%;
+  border-radius: 50%;
   display: inline-block;
 }
 
 * {
   padding: 0;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -63,18 +65,17 @@ body > .navbar {
   height: 50px;
   overflow: hidden;
   -webkit-transition: all 1.8s;
-  -o-transition: all 1.8s;
   transition: all 1.8s;
   font-family: sans-serif;
 }
 
 body > .navbar > .menu {
-  width: 90%;
+  width: 100%;
   padding: 0 5%;
 }
 
 body > .navbar > .menu > .brand {
-  padding: 15px;
+  padding: 15px 0;
   position: relative;
   float: left;
   line-height: 20px;
@@ -109,7 +110,6 @@ body > .navbar > .menu > .elements {
   background-color: #000;
   background-color: rgba(0, 0, 0, 0.8);
   -webkit-transition: top 0.4s;
-  -o-transition: top 0.4s;
   transition: top 0.4s;
 }
 
@@ -132,7 +132,6 @@ body > .navbar > .menu > .elements > .elements-container > a {
   font-size: 14px;
   padding: 15px;
   -webkit-transition: all 0.8s;
-  -o-transition: all 0.8s;
   transition: all 0.8s;
 }
 
@@ -161,7 +160,6 @@ body > .navbar > .menu > .nav-mobile > .hamburger .line {
   display: block;
   margin: 2px auto;
   -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
@@ -194,6 +192,7 @@ body > #content > .container {
   position: relative;
   width: 100%;
   overflow: hidden;
+  padding-top: 100px;
 }
 
 body > #content > .container > .row {
@@ -202,12 +201,30 @@ body > #content > .container > .row {
   text-align: center;
 }
 
+body > #content > .container > .row > .container-description {
+  width: 90%;
+  margin: 15px 5%;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #979797;
+}
+
+body > #content > .container > .row > .container-description > .title {
+  margin: 0 0 35px 0;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+body > #content > .container > .row > .container-description > .description {
+  margin: 0 0 25px 0;
+  font-size: 18px;
+}
+
 body > #content > #welcome {
   min-height: 480px;
   background-image: url("../images/website-design-background.jpg");
   background-repeat: no-repeat;
-  -webkit-background-size: 100% 100%;
-          background-size: 100% 100%;
+  background-size: 100% 100%;
 }
 
 body > #content > #welcome > .presentation {
@@ -223,7 +240,6 @@ body > #content > #welcome > .presentation > .logo {
   height: 200px;
   opacity: 1;
   -webkit-transition: opacity 1s;
-  -o-transition: opacity 1s;
   transition: opacity 1s;
 }
 
@@ -244,12 +260,11 @@ body > #content > #welcome > .presentation > .text {
   position: relative;
   top: 0;
   -webkit-transition: top 1.4s;
-  -o-transition: top 1.4s;
   transition: top 1.4s;
 }
 
 body > #content > #welcome > .presentation > .text > h1 {
-  font-size: 47px;
+  font-size: 40px;
 }
 
 body > #content > #welcome > .presentation > .text > h3 {
@@ -266,9 +281,11 @@ body > #content > #portfolio {
 body > #content > #portfolio .portfolio-item {
   width: 90%;
   margin: 15px 5%;
-  background-color: green;
+  padding-left: 15px;
+  padding-right: 15px;
   height: 260px;
   float: left;
+  background-color: green;
 }
 
 body > #content > #presentation {
@@ -328,10 +345,6 @@ body.done > .navbar {
 }
 
 @media screen and (min-width: 800px) {
-  body > .navbar {
-    padding: 20px 0;
-    background-color: transparent;
-  }
   body > .navbar > .menu > .elements {
     position: relative;
     top: 0;
@@ -342,7 +355,6 @@ body.done > .navbar {
     background-color: transparent;
   }
   body > .navbar > .menu > .elements > .elements-container {
-    width: 100%;
     text-align: right;
     padding: 15px;
   }
@@ -354,32 +366,27 @@ body.done > .navbar {
   body > .navbar > .menu > .nav-mobile {
     display: none;
   }
-  body > #content > .container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-  }
   body > #content > .container > .row {
     width: 90%;
-    padding: 0 5%;
-    position: relative;
-    text-align: center;
-  }
-  body > #content > #portfolio {
-    width: 100%;
-    height: auto;
+    margin: 0 5%;
   }
   body > #content > #portfolio .portfolio-item {
-    width: 30.33333333333333%;
-    margin: 15px 1.5% 15px 1.5%;
-    background-color: green;
+    width: 33.33333333333333%;
     height: 150px;
     float: left;
+    margin: 0;
   }
   body.done > .navbar {
     padding: 20px 0;
+    height: 80px;
     background-color: transparent;
     border-bottom: transparent;
+  }
+  body.scrolled > .navbar {
+    padding: 0;
+    background-color: #000;
+    height: 50px;
+    border-bottom: 1px solid #fff;
   }
 }
  

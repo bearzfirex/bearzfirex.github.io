@@ -50,6 +50,17 @@ $('.loading').center({
   inside: window
 });
 
+$(window).scroll(function(){
+  if($(this).scrollTop() > 0)
+  {
+    $('body').addClass("scrolled");
+  }
+  else
+  {
+    $('body').removeClass("scrolled");
+  }
+});
+
 $(window).bind('resize', function() {    
     $('.full-window').css({
       width: "100%",
