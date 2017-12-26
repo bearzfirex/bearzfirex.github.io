@@ -43,6 +43,33 @@ $thickness:  8px; // Odd numbers created a "wobble" effect.
   margin: 0
   font-family: 'Roboto', sans-serif
   box-sizing: border-box
+  direction: ltr
+
+.sr-only
+  position: absolute
+  width: 1px
+  height: 1px
+  padding: 0
+  margin: -1px
+  overflow: hidden
+  clip: rect(0,0,0,0)
+  border: 0
+
+a
+  text-decoration: none
+  color: #000
+a:hover
+  text-decoration: none
+  color: #000
+a:active
+  text-decoration: none
+  color: #000
+a:link
+  text-decoration: none
+  color: #000
+a:focus
+  text-decoration: none
+  color: #000
 
 //Default values for elements
 
@@ -221,12 +248,104 @@ body
         padding-right: 15px
         height: 260px
         float: left
-        background-color: green
+        position: relative
+        overflow: hidden
+        > img
+          position: absolute
+          width: 100%
+          height: 100%
+          top: 0
+          left: 0
+          padding: 0 15px
+        > .caption
+          cursor: default
+          color: #fff
+          opacity: 0
+          overflow: hidden
+          position: absolute
+          width: 100%
+          height: 100%
+          top: 0
+          left: 0
+          padding: 0 15px
+          z-index: 100
+          background-color: rgba(255, 67, 67, 0.8)
+          transition: opacity 0.6s
+          > .caption-title
+            position: absolute
+            text-align: center
+            top: 0
+            left: -100%
+            width: 100%
+            height: 70px
+            line-height: 70px
+            font-size: 12px
+            padding: 0 5px
+            background-color: #000
+            transition: left 0.5s
+            > h3
+              display: inline-block
+              vertical-align: middle
+              line-height: normal
+          > .caption-description
+            position: absolute
+            right: -100%
+            top: 0
+            width: 100%
+            height: 260px
+            line-height: 260px
+            padding: 5px 5px
+            text-align: justify
+            font-size: 12px
+            min-height: 1px
+            transition: right 0.5s
+            > p
+              display: inline-block
+              vertical-align: middle
+              line-height: normal
+          > .caption-btn
+            position: absolute
+            left: 0
+            bottom: -100%
+            width: 100%
+            min-height: 1px
+            text-align: center
+            transition: bottom 0.5s
+            > a
+              display: inline-block
+              font-size: 30px
+              cursor: pointer
+      .portfolio-item:hover, .portfolio-item:focus, .portfolio-item:active
+        > .caption
+          opacity: 1          
+          > .caption-title
+            left: 0
+          > .caption-description
+            right: 0
+          > .caption-btn
+            bottom: 10px
+
     > #presentation
       display: none
-      background-color: red
       width: 100%
-      height: 300px
+      height: auto
+      padding-left: 15px
+      padding-right: 15px
+      .presentation-text
+        text-align: justify
+        margin: 0 0 35px
+        font-size: 18px
+        line-height: 1.6
+        color: #979797
+        font-weight: 300
+        a
+          text-decoration: underline
+    > #contact-form
+      display: none
+      height: 500px
+      .row
+        
+        
 
 //Rules before the page is loaded
 
@@ -274,7 +393,7 @@ body.done
     background-color: #000
     border-bottom: 1px solid #fff
 
-@media screen and (min-width: 800px)
+@media screen and (min-width: 815px)
   body
     > .navbar   
       > .menu
@@ -301,11 +420,17 @@ body.done
           width: 90%
           margin: 0 5%
       > #portfolio
+        text-align: center
         .portfolio-item
-          width: 33.33333333333333%          
-          height: 150px
+          width: 33.33333333333333%
+          margin: 0 33.333333333%
+          height: 260px
           float: left
-          margin: 0
+          > .caption
+            > .caption-title
+              font-size: 13px
+            > .caption-description
+              font-size: 13px
 
   //Rules for to end animations
 

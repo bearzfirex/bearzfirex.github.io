@@ -43,6 +43,43 @@
   font-family: 'Roboto', sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  direction: ltr;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+a:active {
+  text-decoration: none;
+  color: #000;
+}
+
+a:link {
+  text-decoration: none;
+  color: #000;
+}
+
+a:focus {
+  text-decoration: none;
+  color: #000;
 }
 
 body {
@@ -285,14 +322,135 @@ body > #content > #portfolio .portfolio-item {
   padding-right: 15px;
   height: 260px;
   float: left;
-  background-color: green;
+  position: relative;
+  overflow: hidden;
+}
+
+body > #content > #portfolio .portfolio-item > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 0 15px;
+}
+
+body > #content > #portfolio .portfolio-item > .caption {
+  cursor: default;
+  color: #fff;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 0 15px;
+  z-index: 100;
+  background-color: rgba(255, 67, 67, 0.8);
+  -webkit-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+}
+
+body > #content > #portfolio .portfolio-item > .caption > .caption-title {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  font-size: 12px;
+  padding: 0 5px;
+  background-color: #000;
+  -webkit-transition: left 0.5s;
+  transition: left 0.5s;
+}
+
+body > #content > #portfolio .portfolio-item > .caption > .caption-title > h3 {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+body > #content > #portfolio .portfolio-item > .caption > .caption-description {
+  position: absolute;
+  right: -100%;
+  top: 0;
+  width: 100%;
+  height: 260px;
+  line-height: 260px;
+  padding: 5px 5px;
+  text-align: justify;
+  font-size: 12px;
+  min-height: 1px;
+  -webkit-transition: right 0.5s;
+  transition: right 0.5s;
+}
+
+body > #content > #portfolio .portfolio-item > .caption > .caption-description > p {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+body > #content > #portfolio .portfolio-item > .caption > .caption-btn {
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  min-height: 1px;
+  text-align: center;
+  -webkit-transition: bottom 0.5s;
+  transition: bottom 0.5s;
+}
+
+body > #content > #portfolio .portfolio-item > .caption > .caption-btn > a {
+  display: inline-block;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+body > #content > #portfolio .portfolio-item:hover > .caption, body > #content > #portfolio .portfolio-item:focus > .caption, body > #content > #portfolio .portfolio-item:active > .caption {
+  opacity: 1;
+}
+
+body > #content > #portfolio .portfolio-item:hover > .caption > .caption-title, body > #content > #portfolio .portfolio-item:focus > .caption > .caption-title, body > #content > #portfolio .portfolio-item:active > .caption > .caption-title {
+  left: 0;
+}
+
+body > #content > #portfolio .portfolio-item:hover > .caption > .caption-description, body > #content > #portfolio .portfolio-item:focus > .caption > .caption-description, body > #content > #portfolio .portfolio-item:active > .caption > .caption-description {
+  right: 0;
+}
+
+body > #content > #portfolio .portfolio-item:hover > .caption > .caption-btn, body > #content > #portfolio .portfolio-item:focus > .caption > .caption-btn, body > #content > #portfolio .portfolio-item:active > .caption > .caption-btn {
+  bottom: 10px;
 }
 
 body > #content > #presentation {
   display: none;
-  background-color: red;
   width: 100%;
-  height: 300px;
+  height: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+body > #content > #presentation .presentation-text {
+  text-align: justify;
+  margin: 0 0 35px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #979797;
+  font-weight: 300;
+}
+
+body > #content > #presentation .presentation-text a {
+  text-decoration: underline;
+}
+
+body > #content > #contact-form {
+  display: none;
+  height: 500px;
 }
 
 body.start > .loading {
@@ -344,7 +502,7 @@ body.done > .navbar {
   border-bottom: 1px solid #fff;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 815px) {
   body > .navbar > .menu > .elements {
     position: relative;
     top: 0;
@@ -370,11 +528,20 @@ body.done > .navbar {
     width: 90%;
     margin: 0 5%;
   }
+  body > #content > #portfolio {
+    text-align: center;
+  }
   body > #content > #portfolio .portfolio-item {
     width: 33.33333333333333%;
-    height: 150px;
+    margin: 0 33.333333333%;
+    height: 260px;
     float: left;
-    margin: 0;
+  }
+  body > #content > #portfolio .portfolio-item > .caption > .caption-title {
+    font-size: 13px;
+  }
+  body > #content > #portfolio .portfolio-item > .caption > .caption-description {
+    font-size: 13px;
   }
   body.done > .navbar {
     padding: 20px 0;
@@ -389,6 +556,4 @@ body.done > .navbar {
     border-bottom: 1px solid #fff;
   }
 }
- 
-
- /*# sourceMappingURL= style.css.map */
+/*# sourceMappingURL=style.css.map */
