@@ -81,6 +81,14 @@ $(window).bind('resize', function() {
 
 $(window).on('load', function(){
 
+  $('.elements-container a').click(function () {
+    $('html, body').animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top
+    }, 500);
+
+    return false;
+  });
+
   $('.hamburger').click(function(){
     $(this).toggleClass("is-active");
     $('.elements').toggleClass("show");

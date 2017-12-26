@@ -433,6 +433,7 @@ body > #content > #presentation {
   height: auto;
   padding-left: 15px;
   padding-right: 15px;
+  padding-bottom: 100px;
 }
 
 body > #content > #presentation .presentation-text {
