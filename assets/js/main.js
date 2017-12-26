@@ -103,7 +103,7 @@ $(window).on('load', function(){
       $('.elements-container').center();
       $('#portfolio').slideDown(function(){
         $('#presentation').slideDown();
-        $('#contact-form').slideDown();
+        $('#contact').slideDown();
       });
     }, 2000);
   });

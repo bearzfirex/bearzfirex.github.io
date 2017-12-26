@@ -448,9 +448,43 @@ body > #content > #presentation .presentation-text a {
   text-decoration: underline;
 }
 
-body > #content > #contact-form {
+body > #content > #contact {
   display: none;
-  height: 500px;
+  padding-bottom: 100px;
+  height: 490px;
+  margin: 0;
+  background: url("../images/background-contact.jpg") no-repeat center;
+  text-align: center;
+}
+
+body > #content > #contact .row > .container-description {
+  color: #fff;
+}
+
+body > #content > #contact .button-wrapper {
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin: 15px 0;
+}
+
+body > #content > #contact .button-wrapper .social-network {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  display: inline-block;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 40px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  color: #fff;
+}
+
+body > #content > #contact .button-wrapper .social-network:hover {
+  border-color: #000;
+  color: #000;
+  background-color: #fff;
 }
 
 body.start > .loading {
@@ -542,6 +576,11 @@ body.done > .navbar {
   }
   body > #content > #portfolio .portfolio-item > .caption > .caption-description {
     font-size: 13px;
+  }
+  body > #content > #contact .button-wrapper {
+    display: inline;
+    width: auto;
+    margin: 15px 15px;
   }
   body.done > .navbar {
     padding: 20px 0;
